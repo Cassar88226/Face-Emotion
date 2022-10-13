@@ -45,6 +45,7 @@ for (x,y,w,h) in faces:
         roi=np.expand_dims(roi,axis=0)
 
         preds=classifier.predict(roi)[0]
+        print(preds)
         pred_max = preds.argmax()
         prc = int(100 * round(preds[pred_max], 2))
         label=f'{class_labels[pred_max]} - {prc}%'
